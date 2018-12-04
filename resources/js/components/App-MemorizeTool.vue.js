@@ -23,10 +23,23 @@ export default {
               }
             }))
         })
-        return linesArray.join('<br>')
+        return linesArray
       } else {
-        return 'Type something!'
+        return ['']
       }
+    },
+
+    displayText: function () {
+      var formatted = this.outputText.join('<br>')
+      if (formatted !== '') {
+        return formatted
+      } else {
+        return 'Type Something!<br><--'
+      }
+    },
+
+    formattedText: function () {
+      return this.outputText.join('\n')
     }
   },
 
@@ -45,7 +58,6 @@ export default {
     joinFancy (arrayThing) {
       var outputString = ''
       arrayThing.forEach((thing, i) => {
-        console.log(thing)
         // put a space after UNLESS the next item is a punctuation mark
         if (i === (arrayThing.length - 1)) {
           // It's the last item, so we can't check the next thing
@@ -60,6 +72,15 @@ export default {
         }
       })
       return outputString
+    },
+
+    copyText () {
+      var dummy = document.createElement('textarea')
+      document.body.appendChild(dummy)
+      dummy.value = this.formattedText
+      dummy.select()
+      document.execCommand('copy')
+      document.body.removeChild(dummy)
     }
   }
 }

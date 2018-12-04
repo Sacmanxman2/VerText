@@ -1,6 +1,8 @@
 <template>
   <div>
-    This is the register page.
+    <section class="section">
+      This is the register page. Not done yet.
+    </section>
   </div>
 </template>
 

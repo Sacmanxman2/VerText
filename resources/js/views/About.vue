@@ -1,6 +1,8 @@
 <template>
   <div>
-    About lol
+    <section class="section">
+      I'll add something here later.
+    </section>
   </div>
 </template>
 

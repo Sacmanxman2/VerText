@@ -1,6 +1,8 @@
 <template>
   <div>
-    THis is the login page.
+    <section class="section">
+      This is the login page. Obviously not done yet.
+    </section>
   </div>
 </template>
 
