@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import FooterBar from '../components/Layout-FooterBar.vue'
 import HeaderBar from '../components/Layout-HeaderBar.vue'
+import FooterBar from '../components/Layout-FooterBar.vue'
 
 export default {
   name: 'DefaultLayout',

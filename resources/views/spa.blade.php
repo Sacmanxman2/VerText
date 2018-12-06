@@ -10,6 +10,17 @@
     </head>
     <body>
       <div id="app">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Ad numba 1 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8094080338040647"
+             data-ad-slot="7061670015"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
       <script src="js/manifest.js"></script>
       <script src="js/vendor.js"></script>
