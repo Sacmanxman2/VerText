@@ -6,21 +6,32 @@ export default {
   data: () => {
     return {
       inputText: '',
-      underlineMode: true
+      underlineMode: true,
+      loadedText: false
+    }
+  },
+
+  mounted () {
+    if (typeof(window.localStorage) !== 'undefined') {
+      this.inputText = localStorage.getItem('vertextappmini-text') ? localStorage.getItem('vertextappmini-text') : ''
+      this.loadedText = true
     }
   },
 
   computed: {
     outputText: function () {
+      if (typeof(window.localStorage) !== 'undefined' && this.loadedText) {
+        localStorage.setItem('vertextappmini-text', this.inputText)
+      }
       if (this.inputText) {
+        let lines
         if (this.inputText.length > 5000) {
+          lines = this.inputText.split('\n')
           return [
-            `Yikes, that's a lot of text (${this.numbersWithCommas(this.inputText.length)} characters)! Try breaking it into smaller chunks.`,
-            "",
-            "Alternatively, you could sign up and take advantage of our chunking feature!"
+            `Yikes, that's a lot of text (${this.numbersWithCommas(this.inputText.length)} characters or ${this.numbersWithCommas(lines.length)} lines)! Try breaking it into smaller chunks.`
           ]
         }
-        let lines = this.inputText.split('\n')
+        lines = this.inputText.split('\n')
         let linesArray = lines.map((line) => {
           if (this.underlineMode) {
             return this.process(line)
