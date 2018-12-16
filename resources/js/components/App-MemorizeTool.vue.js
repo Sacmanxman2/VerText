@@ -67,6 +67,10 @@ export default {
       dummy.select()
       document.execCommand('copy')
       document.body.removeChild(dummy)
+      this.$toast.open({
+        message: "Text copied!",
+        type: "is-success"
+      })
     }
   }
 }
